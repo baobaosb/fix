@@ -1,0 +1,19 @@
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<!-- Struts2配置文件的根元素 -->
+<struts>
+  <!-- Struts2的Action必须放在指定的包空间下定义 -->
+	<package name="default" extends="json-default">
+		<action name="user-*" class="cn.gdyvc.action.UserAction" method="{1}">
+			<result name="{1}_success">/success.jsp</result>
+			<result name="success"></result>
+			<result name="fail"></result>
+            <result type="json" name="{1}">
+                <param name="root">result</param>
+            </result>
+		</action>
+	</package>
+	
+		
+</struts>
